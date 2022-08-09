@@ -1,0 +1,50 @@
+int main() {
+int a,n,x,y,ac=0,b,rem,t,rev=0,c,i,tab;
+printf("for prime number enter 1 or palindrome 2 or tabes 3");
+scanf("%d",&a);
+switch(a)
+{
+    case 1:
+        printf("enter the number till which number you want prime number");
+        scanf("%d",&n);
+          for(x=2;x<=n;x++)
+          {
+          ac=0;
+          for(y=x-1;y>1;y--)
+          {
+          if(x%y==0)
+          ac=1;
+          }
+          if(ac==0)
+          printf("%d\n",x);
+          }
+          break;
+    case 2:
+        printf("enter the number");
+        scanf("%d",&b);
+        t=b;
+          while(b>0)
+          {
+          rem=b%10;
+          rev=(rev*10)+rem;
+          b=b/10;
+          }
+            if(rev==t)
+            printf("its a palindrome");
+            else
+            printf("its not a palindrome");
+            break;
+    case 3:
+        printf("enter the number");
+        scanf("%d",&c);
+          for(i=1;i<=10;i++)
+          {
+          tab=c*i;
+          printf("the table of given number is %d*%d=%d\n",c,i,tab);
+          }
+          break;
+    default :           
+        printf("invalid number");
+        break;
+}
+}
